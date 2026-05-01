@@ -13,5 +13,8 @@ void cache_init(CacheList *list) {
 }
 
 void cache_URL(char *URL, void *item, size_t size, CacheList *list){
-
+  list->size = size;
+  if((int) list->size TODO MAX_CACHE_SIZE) {
+    evict(list);
+  }
 }
